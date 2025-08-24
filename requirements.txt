@@ -1,9 +1,7 @@
 flask 
-
 requests 
-
 beautifulsoup4 
-
-gunicorn urllib3 
-
+gunicorn 
+urllib3 
 fake-useragent
+
