@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siavash Downloader</title>
+    <link rel="icon" type="img/x-icon" href="https://minio-tosanscp-2ytxtou5.darkube.app/zilink//resized/200x200/ef1cc25e44d88771d67afa8df64baace.jpg">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400..800&display=swap');
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Baloo Bhaijaan 2", sans-serif;
+            background: #282f30;
+            background: radial-gradient(circle, rgba(40, 47, 48, 1) 0%,
+            rgb(38, 44, 48) 66%, rgba(125, 165, 186, 1) 71%,
+            rgba(199, 87, 186, 1) 80%, rgba(255, 229, 0, 1) 100%);
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        h1, h3 {
+            text-align: center;
+            color: rgba(125, 165, 186, 1);
+        }
+        h3{
+            direction: rtl;
+        }
+        p {
+            color: rgba(125, 165, 186, 1);
+        }
+        form {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        button {
+            font-family: "Baloo Bhaijaan 2", sans-serif;
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            width: 100%;
+        }
+        .error {
+            color: rgb(226, 26, 26);
+            text-align: center;
+        }
+        .result {
+            margin-top: 20px;
+            text-align: center;
+        }
+        a {
+            color: rgba(125, 165, 186, 1);
+            text-decoration: none;
+        }
+        h1:hover{
+            text-shadow: 2px 2px 5px rgba(199, 87, 186, 1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1> <a href="https://golha.co.uk/en/"
+             target="_blank" rel="noopener noreferrer">
+             GoLHa </a>  Archive Downloader </h1>
+        <h3>دوستان عزیزم لطفا فقط لیـنـک سایت گلها رو کپی/ پـیـست کنین.</h3>
+        <p style="text-align: center; margin-top: 1px;">
+            https://golha.co.uk/en/
+             جستجو در 
+        </p>
+        <form method="POST">
+            <input type="text" name="golha_url" placeholder="e.g., https://www.golha.co.uk/en/programme/465" value="{{ golha_url | default('') }}">
+            <button type="submit">   دریافت موزیک </button>
+        </form>
+        {% if error %}
+            <p class="error">{{ error }}</p>
+        {% endif %}
+        {% if mp3_url %}
+            <div class="result">
+                <p>MP3 Found!</p>
+                <a href="{{ mp3_url }}" target="_blank">Download MP3 Here</a>
+            </div>
+        {% endif %}
+        <p style="text-align: center; margin-top: 20px;">
+            Built for Non-commercial Use. <br>
+            Made with ❤️ by <a href="https://zil.ink/siahak" 
+            target="_blank" rel="noopener noreferrer">
+            Siavash </a>.
+        </p>
+    </div>
+</body>
+</html>
