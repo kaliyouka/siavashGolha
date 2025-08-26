@@ -18,12 +18,10 @@ def index():
         return render_template("index.html", error=error, golha_url=golha_url)
     
     # GET: Show empty form
-    return "/index.html"
+    return render_template("index.html")
 
 # Register Blueprint
 app.register_blueprint(downloader_bp)
 
 if __name__ == "__main__":
-    app.run( host='0.0.0.0', port=8000,debug=True)
-
-
+    app.run( host='0.0.0.0', port=5000,debug=True)
